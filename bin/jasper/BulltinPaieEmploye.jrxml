@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d5079fb9-b003-41f0-8bf0-4c0d5befb730">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="65"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="e7e2e84a-f5ae-4f4a-a117-bac2bded13f1"/>
+	<parameter name="dateDu" class="java.lang.String"/>
+	<parameter name="dateAu" class="java.lang.String"/>
+	<parameter name="matricule" class="java.lang.String"/>
+	<parameter name="nom" class="java.lang.String"/>
+	<parameter name="dateEntre" class="java.lang.String"/>
+	<parameter name="totalCout" class="java.lang.String"/>
+	<parameter name="totalAvance" class="java.lang.String"/>
+	<parameter name="qualif" class="java.lang.String"/>
+	<parameter name="service" class="java.lang.String"/>
+	<parameter name="tauxHoraire" class="java.lang.String"/>
+	<parameter name="nbreHoraire" class="java.lang.String"/>
+	<parameter name="taux226" class="java.lang.String"/>
+	<parameter name="taux448" class="java.lang.String"/>
+	<parameter name="salaireBrut" class="java.lang.String"/>
+	<parameter name="retenu448" class="java.lang.String"/>
+	<parameter name="retenu226" class="java.lang.String"/>
+	<parameter name="totalRetenu" class="java.lang.String"/>
+	<parameter name="netApayer" class="java.lang.String"/>
+	<parameter name="primepanier" class="java.lang.String"/>
+	<parameter name="primetransport" class="java.lang.String"/>
+	<parameter name="coutprimepanier" class="java.math.BigDecimal"/>
+	<parameter name="coutprimetransport" class="java.math.BigDecimal"/>
+	<parameter name="salairedebase" class="java.lang.String"/>
+	<parameter name="primeanciennete" class="java.lang.String"/>
+	<parameter name="tauxanciennete" class="java.lang.String"/>
+	<field name="delaiEmploye" class="java.lang.String"/>
+	<field name="remise" class="java.lang.String"/>
+	<field name="avance" class="java.lang.String"/>
+	<field name="dateSituation" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="114" splitType="Stretch">
+			<staticText>
+				<reportElement x="183" y="0" width="216" height="20" forecolor="#000000" uuid="01a56fea-2ec2-4596-b864-631a65a7c6bb"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[BULLETIN DE PAIE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="20" width="169" height="20" uuid="2b2a0696-33b0-4807-a6b5-4573923d6c75"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EL NASS TEA PACKING
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="40" width="149" height="32" uuid="ea809309-a1c3-4433-b076-c20ffaab8229"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ADRESSE: ZI Hay Nahda TANTAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="72" width="100" height="20" uuid="8d9aa0df-3369-41df-ad70-6e7932f7aac2"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CNSS : 1232323]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="1" y="20" width="182" height="84" uuid="3a2ac746-ddcb-49a4-983c-251ea782361e"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="169" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="75" width="149" height="20" uuid="27180ecd-fa5e-4238-b5a4-f106c5de3910"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Matricule  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="55" width="149" height="20" uuid="74e25baa-4961-4b33-a4c1-e4aea2d160c2"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="75" width="124" height="20" uuid="30725ffb-29a2-4e30-a973-af275fd84397"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{matricule}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="55" width="343" height="20" uuid="9d3df9d4-c61d-4dbc-b42a-20c891f08835"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nom}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="201" y="4" width="73" height="20" uuid="bad150f2-ae3a-426b-b02e-ff687a0574eb"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Période du ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="5" width="92" height="20" uuid="8f96c682-0fd6-4a03-b2e9-5d1a4f65c32f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{dateDu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="4" width="100" height="20" uuid="77852733-98c3-4ca3-a5e3-8a9f1c26facf"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{dateAu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="393" y="4" width="30" height="20" uuid="9c819fea-bf34-46c6-a7aa-50f5acbba371"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Au :]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="1" y="35" width="554" height="20" uuid="ae3aa35d-8d67-4147-9cae-722f32d17def"/>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="14" y="95" width="149" height="20" isPrintWhenDetailOverflows="true" uuid="d1e8d0f1-7873-44c9-8ede-b3ec8b1785d3"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Production ( Embauche) :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="35" width="553" height="20" backcolor="#CCCCCC" uuid="34f21731-270f-43be-aa4c-e0b0d2aeb899"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALARIE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="115" width="149" height="20" uuid="ec3275f2-d736-43e1-93a8-32b80520ca87"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nbre Enfant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="135" width="100" height="20" uuid="729a7e59-0d7b-40bf-b5ef-5b079a663c13"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nbr.Déductible]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="75" width="100" height="20" uuid="b957eba5-497e-45d8-b8b8-00fa5f62bcc0"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ville  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="95" width="100" height="20" uuid="f3fc3821-5988-4cdc-b589-cf222073dd72"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nationalité  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="115" width="100" height="20" uuid="7d36a01d-b284-4c12-9487-0faa194db443"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qualification  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="135" width="100" height="20" uuid="b7daf179-a503-4884-94aa-f28f75c9ce23"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="75" width="100" height="20" uuid="8876504f-39e2-466a-9ea6-70fbd80aa48c"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[TANTAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="95" width="100" height="20" uuid="5334a3f2-1a63-425e-b3d7-8ff082791981"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[MAROCAINE]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="1" y="55" width="554" height="114" uuid="13e99888-01a0-4e5a-9a77-b7fd82846f33"/>
+			</rectangle>
+			<textField>
+				<reportElement x="170" y="95" width="124" height="20" uuid="12cd3c85-f02b-450b-bccb-dd980e08adff"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateEntre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="115" width="139" height="20" uuid="0927226a-e4bb-45a9-b307-b2ed73b5e677"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{qualif}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="135" width="141" height="20" uuid="6f197f88-288a-493a-8e1c-c7101e13b954"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{service}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="170" y="115" width="100" height="20" uuid="208acb39-ab51-417c-b64f-e419efb5d64f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[0]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="135" width="100" height="20" uuid="debe7dea-fe82-4388-bdbc-f427763c23e4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[0]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="184" y="4" width="371" height="21" backcolor="#FFFFFF" uuid="7b4c9797-f756-4b2c-ba00-fda06a28229d"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="374" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="11" width="555" height="203" uuid="76946fd3-70de-4aea-a855-c17c300e0713"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="31" y="11" width="201" height="20" uuid="9f4a5989-240d-4651-85c2-22a487a03ca2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Déscription ]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="11" width="217" height="20" backcolor="#CCCCCC" uuid="c7678cf0-9e73-4ded-af27-cc2be153b378"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="217" y="11" width="99" height="20" uuid="3c29cf6a-9b92-407e-a3a2-4dd26b490413"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="316" y="11" width="77" height="20" uuid="fe8591c4-e503-4247-be57-096c24a2b38e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="393" y="11" width="78" height="20" uuid="9313bda6-505d-439c-b88c-f64aedc03dcd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="471" y="11" width="84" height="20" uuid="49369074-02bd-46c8-bca4-d539e5f7394e"/>
+			</rectangle>
+			<line>
+				<reportElement x="216" y="11" width="1" height="203" uuid="eebc8efb-b1ee-4568-8f62-f44eaeb62207"/>
+			</line>
+			<staticText>
+				<reportElement x="6" y="73" width="201" height="20" uuid="0d6cde6c-baef-45be-abe6-1449df7a1a25"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Salaire brut]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="118" width="201" height="20" uuid="187cc969-5c52-4ea7-83f2-caedb3d89013"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Retenue CNSS prestations sociales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="141" width="201" height="20" uuid="e6499f48-1828-4afb-ab52-ce7181be6834"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Retenue CNSS AMO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="354" width="128" height="20" uuid="70bb54d6-4c3e-4d6e-bbb5-2d3ed4a50f89"/>
+				<text><![CDATA[Signature Employé]]></text>
+			</staticText>
+			<line>
+				<reportElement x="316" y="11" width="1" height="203" uuid="cca80261-8158-4d6d-ac4e-6e1893478ef5"/>
+			</line>
+			<line>
+				<reportElement x="393" y="11" width="1" height="203" uuid="31aed961-67ff-4e4b-a7e6-8a3f9b8d1711"/>
+			</line>
+			<line>
+				<reportElement x="471" y="11" width="1" height="203" uuid="0d806362-bf62-4e64-a56b-a4646f34b63d"/>
+			</line>
+			<staticText>
+				<reportElement x="217" y="11" width="99" height="20" uuid="fb06d752-c6b5-4a86-9d00-3d0a713c9f2f"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Base]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="317" y="11" width="76" height="20" uuid="5ec31ac5-a162-4f26-a72c-9c2dcbd05181"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Taux]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="12" width="78" height="20" uuid="73670fbd-0732-4d97-af7c-4cd252740ee5"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Gains]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="471" y="12" width="83" height="19" uuid="77b2ad0a-1ca3-4be2-878e-872116be5eb6"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Retenues]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="214" width="554" height="24" uuid="e34a90f1-035b-478c-bd06-10eaf508715c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="238" width="554" height="24" uuid="4bc769e1-6979-43b8-bc27-4f4a8bcf3ac6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="316" y="262" width="238" height="24" uuid="18b59e7c-0227-462a-86ed-598c2400cf97"/>
+			</rectangle>
+			<line>
+				<reportElement x="216" y="214" width="1" height="48" uuid="59c29fc9-62dc-4dd5-ae07-cfa6584cf1cf"/>
+			</line>
+			<line>
+				<reportElement x="113" y="214" width="1" height="48" uuid="8f74e95f-36cf-4429-bb20-67a86516644f"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="214" width="112" height="24" uuid="ee581468-5701-458a-b3db-f2f02c8d1095"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[C.J.T/ H ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="113" y="214" width="103" height="24" uuid="2ad5188d-3454-4e6e-ac51-e1136da7c032"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[C . Salaire brut]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="316" y="286" width="238" height="24" uuid="95f8d717-1bb2-49c6-84b5-f67abe38f431"/>
+			</rectangle>
+			<line>
+				<reportElement x="423" y="262" width="1" height="48" uuid="09d0350b-7d4d-4dd2-87e2-8f415348d6d6"/>
+			</line>
+			<staticText>
+				<reportElement x="316" y="262" width="107" height="24" uuid="d9e8e88a-b363-4b26-9535-4ff4fc9f23c8"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Mode Paiement]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="262" width="130" height="24" uuid="f6ca9743-3033-4840-baeb-17dbc6f2b4e7"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Net A Payer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="217" y="214" width="176" height="24" uuid="c8d77e2a-cb15-49f4-abe2-015a4d1abea3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[C.Salaire net imposable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="214" width="75" height="24" uuid="673dbdd4-a6b9-41a7-8bc2-dacdc1a768dc"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[C . CNSS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="474" y="216" width="80" height="22" uuid="5bf28f6f-987e-41f4-ae2c-3907eb620090"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[C . I G R]]></text>
+			</staticText>
+			<line>
+				<reportElement x="393" y="214" width="1" height="48" uuid="daeb9ec3-d9c3-43f3-95a9-dec85ac5b645"/>
+			</line>
+			<line>
+				<reportElement x="471" y="214" width="1" height="48" uuid="f5990087-0977-4300-8692-32f6f6ad2502"/>
+			</line>
+			<textField pattern="#,##0.00">
+				<reportElement x="316" y="32" width="76" height="20" uuid="6ea98fd8-994c-45b9-ae09-882972643c52"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tauxHoraire}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="216" y="34" width="100" height="20" uuid="0589698c-dd7a-47f9-80a4-79d7f963f931"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nbreHoraire}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="316" y="135" width="77" height="20" uuid="76f727f2-eaa1-451a-8d41-80bae171959f"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{taux226}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="316" y="111" width="77" height="20" uuid="0bce86d6-12a0-4f7b-9461-e5a3a5a6d832"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{taux448}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="114" y="238" width="102" height="24" uuid="81e83a6d-85ac-4356-a821-cc8e3aab8128"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{salaireBrut}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="474" y="113" width="80" height="20" uuid="da82b13b-ac5e-441e-a2ea-67b335fe2a2b"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{retenu448}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="474" y="135" width="80" height="20" uuid="dac405de-bfe7-4d86-b53e-d8d10cef7d7a"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{retenu226}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="396" y="240" width="72" height="20" uuid="03cfd62e-a1c3-4305-8e28-dd73a4acf5b8"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalRetenu}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="425" y="286" width="129" height="24" uuid="f3758cc2-3656-4a52-bd47-48bcbec31330"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{netApayer}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="6" y="163" width="201" height="20" uuid="e6611780-977f-4a45-a70e-a5d23a6fac5e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{primepanier}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="6" y="186" width="201" height="20" uuid="2d6c60dc-f3e2-49ed-9a1c-f38f43938f73"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{primetransport}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="316" y="161" width="77" height="20" uuid="8c0bbf74-c088-4e1d-84e2-b2d38323de2d"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{coutprimepanier}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="317" y="187" width="76" height="20" uuid="772aec8e-c0b1-4c5f-8e5b-44d185c17c27"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{coutprimetransport}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="95" width="201" height="20" uuid="ac5a0b3d-3629-4bd5-af71-6fe91c95577f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Salaire brut Imposable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="34" width="201" height="20" uuid="ef7f1c48-25aa-4707-978e-222849e32881"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Salaire De Base]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="53" width="201" height="20" uuid="675b53c2-2d26-4034-9c51-0ba1c31e2f1a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Prime Anciennete]]></text>
+			</staticText>
+			<textField pattern="#,##0.00">
+				<reportElement x="394" y="32" width="77" height="20" uuid="6c69e43d-746a-47ec-a725-59a5c393034a"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{salairedebase}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="395" y="53" width="76" height="20" uuid="7136754d-f995-4ea7-988f-ff9d86d353ca"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{primeanciennete}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="396" y="74" width="72" height="20" uuid="6ae35630-53fa-4c04-b454-eacc171cf569"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{salaireBrut}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="396" y="96" width="72" height="20" uuid="73261c45-3589-4421-888f-bedb25f1933a"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{salaireBrut}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="317" y="54" width="75" height="20" uuid="90a48bba-56c8-4c3d-bee3-e28d06299c6e"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tauxanciennete}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="57" splitType="Stretch"/>
+	</columnFooter>
+	<lastPageFooter>
+		<band height="10"/>
+	</lastPageFooter>
+</jasperReport>

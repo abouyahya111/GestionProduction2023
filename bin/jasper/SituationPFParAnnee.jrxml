@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BonProduction3" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="efe096e4-dd6e-4680-9b4a-6aca2c708f71">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="107"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\ENV_DEV\\workspace3\\GestionProduction\\src\\jasper\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Periode" class="java.lang.String"/>
+	<parameter name="magasin" class="java.lang.String"/>
+	<parameter name="annedu" class="java.lang.String"/>
+	<parameter name="anneau" class="java.lang.String"/>
+	<parameter name="moisannedu" class="java.lang.String"/>
+	<parameter name="moisanneau" class="java.lang.String"/>
+	<parameter name="porcentage" class="java.lang.String"/>
+	<parameter name="mois" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="moisAnneDu" class="java.lang.Integer"/>
+	<field name="moisAnneAu" class="java.lang.String"/>
+	<field name="quantiteFabriquerAnneDu" class="java.math.BigDecimal"/>
+	<field name="quantiteFabriquerAnneAu" class="java.math.BigDecimal"/>
+	<field name="pourcentageAnneDu" class="java.math.BigDecimal"/>
+	<field name="pourcentageAnneAu" class="java.math.BigDecimal"/>
+	<field name="difference" class="java.math.BigDecimal"/>
+	<variable name="TotalFabriquerDu" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantiteFabriquerAnneDu}]]></variableExpression>
+	</variable>
+	<variable name="TotalPourcentageDu" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{pourcentageAnneDu}]]></variableExpression>
+	</variable>
+	<variable name="TotalFabriquerAu" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantiteFabriquerAnneAu}]]></variableExpression>
+	</variable>
+	<variable name="TotalPourcentageAu" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{pourcentageAnneAu}]]></variableExpression>
+	</variable>
+	<variable name="TotalDifference" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{difference}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" uuid="a4034dee-3504-4274-9c7b-c52e16f0e01d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SITUATION PF PAR ANNEE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="115">
+			<textField>
+				<reportElement x="0" y="0" width="417" height="20" uuid="e9817885-a341-465d-9b94-d142ef2d3d48"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{magasin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="417" height="20" uuid="58e10d05-84d2-415a-bcae-cab7659e8a63"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Periode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="98" width="150" height="14" backcolor="#999999" uuid="f11175e8-82a5-4646-8e41-9152f690d310"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SITUATION PF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="262" y="97" width="148" height="14" backcolor="#999999" uuid="74fd98ff-f8a7-4f72-b77c-0409baa9fc96"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SITUATION PF]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="150" y="98" width="60" height="14" backcolor="#999999" uuid="a63bf264-411f-411b-b0bb-8d86802617a8"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{annedu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="410" y="97" width="58" height="14" backcolor="#999999" uuid="e68ca68c-31ee-4b4f-9984-c52865273796"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{anneau}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22">
+			<staticText>
+				<reportElement mode="Opaque" x="50" y="2" width="100" height="20" backcolor="#999999" uuid="0524a173-c634-4394-84e6-a3911574d837"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTT FABRIQUE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="150" y="2" width="60" height="20" backcolor="#999999" uuid="c6e17b96-fbb3-417a-a0db-f7942cb2e0e8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="262" y="1" width="148" height="20" backcolor="#999999" uuid="32f3c0b1-f29c-4c5b-b7ab-4d23f22156d3"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTT FABRIQUE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="410" y="1" width="60" height="20" backcolor="#999999" uuid="6cde2bfc-e1b8-406e-a116-03d57df64e99"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="488" y="2" width="67" height="20" backcolor="#999999" uuid="79480977-0030-4a91-af53-aa41c9e706b2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIFFERENCE]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="2" width="50" height="20" backcolor="#999999" uuid="f2fec378-48fd-47b0-9cc2-f8904c7f3633"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{moisannedu}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="50" y="0" width="100" height="20" uuid="01451d0e-f9e4-4523-a68f-194219820236"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantiteFabriquerAnneDu}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="262" y="-1" width="148" height="20" uuid="b7361923-ad8c-4011-832c-c04d31add528"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantiteFabriquerAnneAu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="60" height="20" uuid="26d96ba1-2914-45cc-8231-fe2f92b7a3b7"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pourcentageAnneDu}.setScale(2,RoundingMode.HALF_UP).toString()+ " %"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="-1" width="60" height="20" uuid="64f95e73-d581-4a8d-8745-2d0273f436b5"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pourcentageAnneAu}.setScale(2,RoundingMode.HALF_UP).toString()+ " %"]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="488" y="0" width="67" height="20" uuid="7d28d44b-261f-4ce0-9355-c00d8d3e07b5"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{difference}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="50" height="20" uuid="8aaccf01-257d-41f3-8351-cc9c646edac2"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{moisAnneDu}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="26">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="6" width="50" height="20" backcolor="#999999" uuid="84837aa3-4ebd-4342-9b39-4a964500757a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField pattern="#,##0.00">
+				<reportElement x="50" y="6" width="100" height="20" uuid="59ddb87d-377e-42b3-a085-521dda0a332b"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TotalFabriquerDu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="6" width="60" height="20" uuid="41e373f4-f72a-4d2e-b9c1-e653aa00a7b1"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TotalPourcentageDu}.setScale(2,RoundingMode.HALF_UP).toString()+ " %"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="262" y="5" width="45" height="20" backcolor="#999999" uuid="d26bdcae-598a-4c1a-bb74-5493fbaf88d5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField pattern="#,##0.00">
+				<reportElement x="307" y="5" width="102" height="20" uuid="1128efd6-b755-43a1-a489-1423bae2ecf5"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TotalFabriquerAu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="409" y="5" width="60" height="20" uuid="d0314628-a27b-4d29-96d5-15413a1dc523"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TotalPourcentageAu}.setScale(2,RoundingMode.HALF_UP).toString()+ " %"]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="488" y="6" width="67" height="20" uuid="c347514c-a944-42dd-8c24-0437e23f571f"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TotalDifference}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<summary>
+		<band height="449">
+			<barChart>
+				<chart>
+					<reportElement x="0" y="40" width="554" height="190" uuid="383846ff-7f1a-4866-9034-2789af94f5d4"/>
+					<chartTitle>
+						<font size="14" isBold="true"/>
+						<titleExpression><![CDATA["QUANTITE FABRIQUER EN  "+$P{annedu}]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{moisAnneDu}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{moisAnneDu}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{pourcentageAnneDu}.setScale(2, RoundingMode.HALF_UP)]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+					<plot labelRotation="80.0"/>
+					<itemLabel/>
+					<categoryAxisLabelExpression><![CDATA[$P{mois}]]></categoryAxisLabelExpression>
+					<categoryAxisFormat labelRotation="80.0">
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA[$P{porcentage}]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+			<barChart>
+				<chart>
+					<reportElement x="0" y="240" width="554" height="198" uuid="13580921-4d49-4cd1-8335-7469e33a6c64"/>
+					<chartTitle>
+						<font size="14" isBold="true"/>
+						<titleExpression><![CDATA["QUANTITE FABRIQUER EN  "+$P{anneau}]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{moisAnneAu}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{moisAnneAu}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{pourcentageAnneAu}.setScale(2, RoundingMode.HALF_UP)]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+					<plot labelRotation="80.0"/>
+					<itemLabel/>
+					<categoryAxisLabelExpression><![CDATA[$P{mois}]]></categoryAxisLabelExpression>
+					<categoryAxisFormat labelRotation="80.0">
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA[$P{porcentage}]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

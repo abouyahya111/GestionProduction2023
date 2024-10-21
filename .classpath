@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="src/lib/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="src/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="src/lib/hibernate-commons-annotations-4.0.5.Final.jar"/>
+	<classpathentry kind="lib" path="src/lib/hibernate-core-4.3.11.Final.jar"/>
+	<classpathentry kind="lib" path="src/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="src/lib/jandex-1.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="src/lib/javassist-3.18.1-GA.jar"/>
+	<classpathentry kind="lib" path="src/lib/jboss-logging-3.1.3.GA.jar"/>
+	<classpathentry kind="lib" path="src/lib/jboss-logging-annotations-1.2.0.Beta1.jar"/>
+	<classpathentry kind="lib" path="src/lib/jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="src/lib/jsf-api-2.2.0.jar"/>
+	<classpathentry kind="lib" path="src/lib/jsf-impl-2.2.0.jar"/>
+	<classpathentry kind="lib" path="src/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="src/lib/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="src/lib/swingx.jar"/>
+	<classpathentry kind="lib" path="src/lib/Twinkle.jar"/>
+	<classpathentry kind="lib" path="src/lib/rs2xml.jar"/>
+	<classpathentry kind="lib" path="src/lib/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="src/lib/JTattoo-1.6.11.jar"/>
+	<classpathentry kind="lib" path="src/lib/commons-beanutils-1.9.3.jar"/>
+	<classpathentry kind="lib" path="src/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="src/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="forms-1.3.0.jar" sourcepath="forms-1.3.0-src.zip"/>
+	<classpathentry kind="lib" path="src/lib/commons-digester-1.7.jar"/>
+	<classpathentry kind="lib" path="src/lib/commons-collections-2.1.jar"/>
+	<classpathentry kind="lib" path="src/lib/com-jaspersoft-ireport.jar"/>
+	<classpathentry kind="lib" path="src/lib/com.lowagie.text-2.1.7.jar"/>
+	<classpathentry kind="lib" path="src/lib/groovy-all-1.8.0.jar"/>
+	<classpathentry kind="lib" path="src/lib/javax.mail-1.5.2.jar"/>
+	<classpathentry kind="lib" path="src/lib/smtp-1.5.2.jar"/>
+	<classpathentry kind="lib" path="src/lib/org.eclipse.swt-3.1.jar"/>
+	<classpathentry kind="lib" path="src/lib/eclipse-ui-forms-3.5.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="src/lib/jdbc-postgresql.jar"/>
+	<classpathentry kind="lib" path="src/lib/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="src/lib/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="src/lib/org-netbeans-core-RELEASE73.jar"/>
+	<classpathentry kind="lib" path="src/lib/livingdoc-confluence5-plugin-1.1.2.jar"/>
+	<classpathentry kind="lib" path="miglayout15-swing.jar" sourcepath="miglayout-src.zip"/>
+	<classpathentry kind="lib" path="src/lib/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="src/lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="src/lib/commons-digester3-3.2.jar"/>
+	<classpathentry kind="lib" path="src/lib/spring-core-4.2.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/lib/jfreechart/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="src/lib/jfreechart/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="src/lib/jfreechart/jfreechart-1.0.19-experimental.jar"/>
+	<classpathentry kind="lib" path="src/lib/jfreechart/jfreechart-1.0.19-swt.jar"/>
+	<classpathentry kind="lib" path="src/lib/jfreechart/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="src/lib/jfreechart/jfreesvg-2.0.jar"/>
+	<classpathentry kind="lib" path="src/lib/jfreechart/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="src/lib/jfreechart/orsoncharts-1.4-eval-nofx.jar"/>
+	<classpathentry kind="lib" path="src/lib/jfreechart/orsonpdf-1.6-eval.jar"/>
+	<classpathentry kind="lib" path="src/lib/jfreechart/servlet.jar"/>
+	<classpathentry kind="lib" path="src/lib/jfreechart/swtgraphics2d.jar"/>
+	<classpathentry kind="lib" path="src/lib/xmlbeans-3.0.1.jar"/>
+	<classpathentry kind="lib" path="src/lib/poi-ooxml-schemas-3.17.jar"/>
+	<classpathentry kind="lib" path="src/lib/jasperreports-4.1.1.jar"/>
+	<classpathentry kind="lib" path="src/lib/jasperreports-fonts-4.1.1.jar"/>
+	<classpathentry kind="lib" path="src/lib/jasperreports-javaflow-4.1.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

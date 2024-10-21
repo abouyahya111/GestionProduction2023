@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05f6e379-16e6-4497-a110-95784878f26d">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="258"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="4e6de636-a2b2-4211-a995-219801a65aa0"/>
+	<parameter name="numOF" class="java.lang.String"/>
+	<parameter name="machine" class="java.lang.String"/>
+	<parameter name="equipe" class="java.lang.String"/>
+	<parameter name="magasin" class="java.lang.String"/>
+	<parameter name="dateProd" class="java.lang.String"/>
+	<parameter name="titre" class="java.lang.String"/>
+	<field name="matierePremier.code" class="java.lang.String"/>
+	<field name="matierePremier.nom" class="java.lang.String"/>
+	<field name="quantite" class="java.lang.String"/>
+	<field name="quantExistante" class="java.lang.String"/>
+	<field name="quantCharge" class="java.math.BigDecimal"/>
+	<field name="fournisseurMP.codeFournisseur" class="java.lang.String"/>
+	<field name="moinsPlus" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<textField>
+				<reportElement x="85" y="74" width="357" height="20" uuid="b21052e8-2b71-467b-bf26-10624ede7d17"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="119" y="16" width="290" height="21" backcolor="#66FFCC" uuid="4610af30-d0c2-43f5-82bd-7eb9d7270fc7"/>
+			</rectangle>
+			<textField>
+				<reportElement x="197" y="16" width="100" height="20" uuid="8411fa3c-4165-4569-982b-f72168dc24c3"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numOF}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="125" y="16" width="100" height="20" uuid="4ba3eebc-5808-4ce6-a48d-4ed5c8694247"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[N° OF:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="121" splitType="Stretch">
+			<rectangle>
+				<reportElement x="137" y="0" width="290" height="79" backcolor="#CCCCFF" uuid="3bb02db3-4633-47df-b275-f5b8beed2fbc"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="145" y="31" width="100" height="20" uuid="22246b37-c5dc-4425-add8-d1dfa90f063c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Machine :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="145" y="11" width="103" height="20" uuid="0eb8bd6d-4434-442c-b707-eb98b9005911"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Magasin :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="254" y="11" width="103" height="20" uuid="e9097f7d-100b-4a79-b732-d9dc4df02ff9"/>
+				<textFieldExpression><![CDATA[$P{magasin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="31" width="103" height="20" uuid="8b965042-2566-41c5-baaf-b4b5b79ce775"/>
+				<textFieldExpression><![CDATA[$P{machine}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="79" width="224" height="20" forecolor="#000000" uuid="a99dc3b0-6114-4ba6-895e-2cb569215f56"/>
+				<textElement>
+					<font size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Liste de matière première]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="145" y="50" width="103" height="20" uuid="52759021-d9e4-4972-8002-e325e1e4cf86"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Production :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="257" y="51" width="100" height="20" uuid="4a4c5558-8bfe-4970-a91f-8c5e0d295a94"/>
+				<textFieldExpression><![CDATA[$P{dateProd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="101" width="58" height="20" backcolor="#CCCCCC" uuid="b3db3c0a-2717-4b4c-8d5b-69b8a7123ebb"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="58" y="101" width="222" height="20" backcolor="#CCCCCC" uuid="dfa42698-cf4b-468f-a516-3d7ffcbf4243"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="357" y="101" width="85" height="20" backcolor="#CCCCCC" uuid="e155205f-6934-4a79-912f-c856e3a601f6"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTE CHARGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="280" y="101" width="77" height="20" backcolor="#CCCCCC" uuid="2b6ef22c-32ab-410b-9849-b5ba3b5a5f2d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fournisseur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="442" y="101" width="85" height="20" backcolor="#CCCCCC" uuid="3da8ce49-69b9-491f-b9e5-f365eae519b9"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MANQUE/PLUS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="58" height="20" uuid="470f6c8e-9c2e-4200-8250-1ad48b136aa2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{matierePremier.code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="58" y="0" width="222" height="20" uuid="d8088eb9-19e1-4d78-bd92-4857be2e3569"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{matierePremier.nom}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="357" y="0" width="85" height="20" uuid="93a3dabd-ad54-41cc-a9fd-2240493fed03"/>
+			</rectangle>
+			<textField pattern="#,##0.00">
+				<reportElement x="357" y="0" width="85" height="20" uuid="b76ac1b5-0286-4c10-9ad0-d6e4f17e184e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{quantCharge}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="280" y="0" width="77" height="20" uuid="c7aa65f0-52b3-48e7-a3a8-70049a5b4b35"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fournisseurMP.codeFournisseur}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="442" y="0" width="85" height="20" uuid="455252d1-5bc0-4857-89f7-20e0b768e33c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{moinsPlus}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="0" width="128" height="20" uuid="fa449c9d-7f04-4dce-88cc-bd54de51e1cd"/>
+				<text><![CDATA[Signature Magasinier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="0" width="128" height="20" uuid="4300ca4f-5cd6-4c02-8e99-433a54510cb1"/>
+				<text><![CDATA[Signature Chef Equipe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="0" width="137" height="20" uuid="b682784d-806f-4242-a267-4dc63ffd0858"/>
+				<text><![CDATA[Signature Administateur]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="50">
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="455" y="30" width="100" height="20" uuid="482e4f1a-b510-43f9-b78e-7b71d6344304"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

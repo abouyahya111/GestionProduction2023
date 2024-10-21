@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GrapheVenteVendeurParMois" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ed753390-f20f-444c-ad04-cb3c1a30c053">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="quantite" class="java.lang.String"/>
+	<parameter name="Periode" class="java.lang.String"/>
+	<parameter name="magasin" class="java.lang.String"/>
+	<parameter name="annedu" class="java.lang.String"/>
+	<parameter name="anneau" class="java.lang.String"/>
+	<parameter name="moisannedu" class="java.lang.String"/>
+	<parameter name="moisanneau" class="java.lang.String"/>
+	<parameter name="porcentage" class="java.lang.String"/>
+	<parameter name="mois" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="moisAnneDu" class="java.lang.Integer"/>
+	<field name="moisAnneAu" class="java.lang.String"/>
+	<field name="quantiteFabriquerAnneDu" class="java.math.BigDecimal"/>
+	<field name="quantiteFabriquerAnneAu" class="java.math.BigDecimal"/>
+	<field name="pourcentageAnneDu" class="java.math.BigDecimal"/>
+	<field name="pourcentageAnneAu" class="java.math.BigDecimal"/>
+	<field name="difference" class="java.math.BigDecimal"/>
+	<summary>
+		<band height="750" splitType="Stretch">
+			<barChart>
+				<chart>
+					<reportElement x="0" y="10" width="554" height="310" uuid="0bec49db-bb35-446c-a267-bb0a197ba29c"/>
+					<chartTitle>
+						<font size="14" isBold="true"/>
+						<titleExpression><![CDATA["QUANTITE FABRIQUER EN  "+$P{annedu}]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{moisAnneDu}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{moisAnneDu}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{quantiteFabriquerAnneDu}.setScale(2, RoundingMode.HALF_UP)]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+					<plot labelRotation="80.0"/>
+					<itemLabel/>
+					<categoryAxisLabelExpression><![CDATA[$P{mois}]]></categoryAxisLabelExpression>
+					<categoryAxisFormat labelRotation="80.0">
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA[$P{quantite}]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+			<barChart>
+				<chart>
+					<reportElement x="-9" y="380" width="554" height="298" uuid="4d1a8dd7-96ca-428c-b413-b22d89e1f340"/>
+					<chartTitle>
+						<font size="14" isBold="true"/>
+						<titleExpression><![CDATA["QUANTITE FABRIQUER EN  "+$P{anneau}]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{moisAnneAu}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{moisAnneAu}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{quantiteFabriquerAnneAu}.setScale(2, RoundingMode.HALF_UP)]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+					<plot labelRotation="80.0"/>
+					<itemLabel/>
+					<categoryAxisLabelExpression><![CDATA[$P{mois}]]></categoryAxisLabelExpression>
+					<categoryAxisFormat labelRotation="80.0">
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA[$P{quantite}]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BonProduction" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d8391f09-25a3-4e68-86bf-0f9252fda7a2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="DATE_DU" class="java.lang.String"/>
+	<parameter name="DATE_AU" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT m.code code, m.nom nom ,SUM(c.quantite_consomme) qte_fabrique, SUM(c.QUANTITE_DECHET) quantite_dechet, s.unite unite
+FROM cout_mp c,production p, matiere_premier m, categorie_mp cat, sub_categorie_mp s
+where c.id_production=p.id
+and m.id_cat=cat.id
+and cat.id_sub_cat=s.id
+and c.id_mat_pre=m.id
+and p.`date-deb_fab_pre` >='2017-04-01'
+AND p.date_fin_fab_pre<='2017-04-14'
+
+group by m.code]]>
+	</queryString>
+	<field name="code" class="java.lang.String"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="qte_fabrique" class="java.lang.Double"/>
+	<field name="quantite_dechet" class="java.lang.Double"/>
+	<field name="unite" class="java.lang.String"/>
+	<group name="code">
+		<groupExpression><![CDATA[$F{code}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="73" y="0" width="431" height="31" uuid="e85885a3-d867-4cf1-a47f-9091637d70af"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BON DE PRODUCTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="31" width="41" height="19" uuid="94d420a2-f331-4794-9f6d-e51d77647d08"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DU ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="244" y="31" width="41" height="19" uuid="bece01cb-5c87-433b-911f-1be86c1bc8dc"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AU]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="114" y="31" width="130" height="20" uuid="1628550e-f41b-42c7-a5ca-72c3dc629fa0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATE_DU}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="31" width="146" height="20" uuid="4b03738c-e965-468b-92fb-ac2de4ac5342"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATE_AU}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="183" height="20" uuid="f1afd7f4-21b5-4c13-8e32-bbfb93d379cb"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Matière Première]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="0" width="116" height="20" uuid="6a9d0d10-ecf3-48cd-9825-91f1660a4c7c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantité Fabriquée]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="0" width="145" height="20" uuid="68696a2a-22ea-4a82-996b-7c3f08952a97"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[quantité Déchet]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="60" height="20" uuid="74fd01b4-f2b7-4822-bde3-8dbde02894d2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unité]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="183" height="20" uuid="58de8206-cbf7-4904-a464-87553edea586"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.000">
+				<reportElement x="183" y="0" width="116" height="20" uuid="c428c878-edd9-410c-89ef-c8d96bd276ba"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qte_fabrique}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.000">
+				<reportElement x="299" y="0" width="145" height="20" uuid="7b083c31-9016-47ef-8e30-3adeebc843a3"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantite_dechet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="60" height="20" uuid="38b2cc99-c44f-47d7-916e-cd0e05f1a27c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unite}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

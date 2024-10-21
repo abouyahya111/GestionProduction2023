@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="grapheVenteVendeurParClient" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="DATE_DU" class="java.lang.String"/>
+	<parameter name="DATE_AU" class="java.lang.String"/>
+	<parameter name="CODE_VENDEUR" class="java.lang.String"/>
+	<parameter name="VENDEUR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT client as Code ,
+Nom_Client  as Nom,
+sum(Prix) Total_Prix,
+sum(quantite) Total_Quantite
+from
+FACTURES_DIST
+ where
+Etat='confirmé'
+and Depot='D.AGADIR'
+AND CODE_VENDEUR=$P{CODE_VENDEUR}
+and date between $P{DATE_DU} and $P{DATE_AU}
+and gratuite=0
+group by client,Nom_Client order by Total_Quantite desc]]>
+	</queryString>
+	<field name="Code" class="java.lang.String"/>
+	<field name="Nom" class="java.lang.String"/>
+	<field name="Total_Prix" class="java.math.BigDecimal"/>
+	<field name="Total_Quantite" class="java.math.BigDecimal"/>
+	<variable name="totalQuantite" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{Total_Quantite}]]></variableExpression>
+	</variable>
+	<summary>
+		<band height="698" splitType="Stretch">
+			<pieChart>
+				<chart>
+					<reportElement x="0" y="0" width="555" height="692"/>
+					<chartTitle>
+						<font size="18" isBold="true"/>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend position="Bottom"/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{Code}]]></keyExpression>
+					<valueExpression><![CDATA[$F{Total_Quantite}]]></valueExpression>
+				</pieDataset>
+				<piePlot isShowLabels="true" isCircular="true" labelFormat="{0} {2} " legendLabelFormat="{0} {1} {2}">
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>

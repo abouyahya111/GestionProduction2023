@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BonProduction3" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="efe096e4-dd6e-4680-9b4a-6aca2c708f71">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="499"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.chart.pie.ignore.duplicated.key" value="true"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\ENV_DEV\\workspace3\\GestionProduction\\src\\jasper\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Periode" class="java.lang.String"/>
+	<parameter name="magasin" class="java.lang.String"/>
+	<parameter name="etatcategorie" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="articles.codeArticle" class="java.lang.String"/>
+	<field name="articles.liblle" class="java.lang.String"/>
+	<field name="quantiteConsomme" class="java.math.BigDecimal"/>
+	<field name="pourcentage" class="java.math.BigDecimal"/>
+	<field name="pourcentage_categorie" class="java.math.BigDecimal"/>
+	<field name="pourcentage_article" class="java.math.BigDecimal"/>
+	<field name="categorie.nom" class="java.lang.String"/>
+	<variable name="TotalConsomme" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantiteConsomme}]]></variableExpression>
+	</variable>
+	<variable name="TotalPourcentage" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{pourcentage}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" uuid="a4034dee-3504-4274-9c7b-c52e16f0e01d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SITUATION PRODUCTION TOTAL PAR ARTICLE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50">
+			<textField>
+				<reportElement x="0" y="0" width="417" height="20" uuid="e9817885-a341-465d-9b94-d142ef2d3d48"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{magasin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="417" height="20" uuid="58e10d05-84d2-415a-bcae-cab7659e8a63"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Periode}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="2" width="78" height="20" backcolor="#999999" uuid="adf4d9d2-5950-4824-940d-8d80b7209230"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="78" y="2" width="231" height="20" backcolor="#999999" uuid="0524a173-c634-4394-84e6-a3911574d837"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ARTICLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="309" y="2" width="127" height="20" backcolor="#999999" uuid="f3eebcd2-e446-4134-917d-6c73bb9b16c8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantite]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="436" y="2" width="102" height="20" backcolor="#999999" uuid="9f101e8a-9466-4ba2-b8e4-d355170b186d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pourcentage]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement x="0" y="0" width="78" height="20" uuid="9d31d95f-e183-4286-a039-f6c6f48c8cc2"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{articles.codeArticle}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="309" y="0" width="127" height="20" uuid="565fd73a-65c8-4f27-ac9e-b87354e8190e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantiteConsomme}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00">
+				<reportElement x="436" y="0" width="102" height="20" uuid="9d98daac-0740-407e-9e4f-1f3153e7d4e4"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pourcentage}.setScale(2,RoundingMode.HALF_UP).toString()+ " %"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="0" width="231" height="20" uuid="b8d0c9b0-442f-466d-8f9c-117e5ab8e89b"/>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{articles.liblle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="435">
+			<staticText>
+				<reportElement x="0" y="8" width="309" height="18" uuid="43933774-ab06-4411-9664-1f63a7551201"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField pattern="#,##0.00">
+				<reportElement x="309" y="8" width="127" height="18" uuid="fe279f30-350a-4104-b93d-0c2b4186ec49"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TotalConsomme}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="8" width="102" height="18" uuid="b9da6fa2-0403-41fd-b812-62e3fc4fcc65"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TotalPourcentage}.setScale(2,RoundingMode.HALF_UP).toString()+ " %"]]></textFieldExpression>
+			</textField>
+			<pieChart>
+				<chart isShowLegend="false">
+					<reportElement x="1" y="40" width="554" height="395" uuid="f32a0f2e-7e16-47c3-983c-d9841c7f1509"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$P{etatcategorie}.equals( "OUI" ) ?  $F{articles.liblle}+"  "+ $F{pourcentage_article}.setScale(2,RoundingMode.HALF_UP) +"%": $F{categorie.nom}]]></keyExpression>
+					<valueExpression><![CDATA[$P{etatcategorie}.equals( "OUI" ) ?   $F{pourcentage_article}.setScale(2, RoundingMode.HALF_UP) : $F{pourcentage_categorie}.setScale(2, RoundingMode.HALF_UP)]]></valueExpression>
+					<labelExpression><![CDATA[$P{etatcategorie}.equals( "OUI" ) ?  $F{pourcentage}.setScale(2, RoundingMode.HALF_UP) +" %" :  $F{categorie.nom}+"  "+$F{pourcentage_categorie}.setScale(2, RoundingMode.HALF_UP)+" %"]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>

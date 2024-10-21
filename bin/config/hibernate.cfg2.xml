@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- Database connection settings -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/gestionproduction1</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">root</property>
+
+    
+    <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+    <property name="hbm2ddl.auto">update</property>
+    <mapping class="dao.entity.Utilisateur"/>
+    <mapping class="dao.entity.CategorieMp"/>
+    <mapping class="dao.entity.MatierePremier"/>
+    <mapping class="dao.entity.SubCategorieMp"/>
+    <mapping class="dao.entity.Utilisateur"/>
+    <mapping class="dao.entity.Commande"/>
+    <mapping class="dao.entity.Fournisseur"/>
+    <mapping class="dao.entity.DetailCommande"/>
+    <mapping class="dao.entity.RipFournisseur"/>
+    <mapping class="dao.entity.Machine"/>
+    <mapping class="dao.entity.LigneMachine"/>
+    <mapping class="dao.entity.Articles"/>
+    <mapping class="dao.entity.DetailEstimation"/>
+    <mapping class="dao.entity.Equipe"/>
+    <mapping class="dao.entity.Employe"/>
+    <mapping class="dao.entity.Production"/>
+    <mapping class="dao.entity.DetailProduction"/>
+    <mapping class="dao.entity.CoutMP"/>
+    <mapping class="dao.entity.StockMP"/>
+    <mapping class="dao.entity.Depot"/>
+    <mapping class="dao.entity.Magasin"/>
+    <mapping class="dao.entity.TransferStockMP"/>
+    <mapping class="dao.entity.DetailTransferStockMP"/>
+    <mapping class="dao.entity.StockPF"/>
+    <mapping class="dao.entity.TypeResEmploye"/>
+    <mapping class="dao.entity.TypeEquipe"/>
+    <mapping class="dao.entity.DetailProdGen"/>
+    <mapping class="dao.entity.CompteurProduction"/>
+    <mapping class="dao.entity.DetailTransferProduitFini"/>
+    <mapping class="dao.entity.EmployeBloque"/>
+    <mapping class="dao.entity.Parametre"/>
+    <mapping class="dao.entity.FicheEmploye"/>
+    <mapping class="dao.entity.MagasinProduitFini"/>
+    <mapping class="dao.entity.Sequenceur"/>
+   	<mapping class="dao.entity.TransferStockPF"/>
+    <mapping class="dao.entity.CompteurNumDossier"/>
+    <mapping class="dao.entity.Menu"/>
+    <mapping class="dao.entity.Habilitation"/>
+    <mapping class="dao.entity.DetailResponsableProd"/>
+    <mapping class="dao.entity.CompteurResponsableProd"/>
+   	<mapping class="dao.entity.Client"/>
+   	<mapping class="dao.entity.PrixClientMP"/>
+    <mapping class="dao.entity.FactureProduction"/>
+    <mapping class="dao.entity.DetailFactureProduction"/>
+    <mapping class="dao.entity.CompteurTransferMP"/>
+    <mapping class="dao.entity.CompteStockMP"/>
+     <mapping class="dao.entity.CompteurEmployeProd"/>
+      <mapping class="dao.entity.Charges"/>
+    <mapping class="dao.entity.ChargeProduction"/>
+     <mapping class="dao.entity.DetailChargeVariable"/>
+      <mapping class="dao.entity.DetailChargeFixe"/>
+        <mapping class="dao.entity.CompteurAbsenceEmploye"/>
+        <mapping class="dao.entity.Promotion"/>
+        <mapping class="dao.entity.DetailEstimationPromo"/>
+         <mapping class="dao.entity.ProductionMP"/>
+         <mapping class="dao.entity.ArticlesMP"/>
+          <mapping class="dao.entity.DetailEstimationMP"/>
+          <mapping class="dao.entity.DetailProductionMP"/>
+           <mapping class="dao.entity.CoutProdMP"/>
+        
+        
+     
+  </session-factory>
+</hibernate-configuration>

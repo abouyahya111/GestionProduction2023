@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BonProduction3_subreport1" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="583dd144-2112-4f12-9986-b92569df10bd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idProduction" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     cout_mp.`id` AS cout_mp_id,
+     cout_mp.`COUT_DECHET` AS cout_mp_COUT_DECHET,
+     cout_mp.`prix_total` AS cout_mp_prix_total,
+     cout_mp.`prix_unitaire` AS cout_mp_prix_unitaire,
+     cout_mp.`quantite_CHARGE` AS cout_mp_quantite_CHARGE,
+     cout_mp.`quantite_charge_supp` AS cout_mp_quantite_charge_supp,
+     cout_mp.`quantite_consomme` AS cout_mp_quantite_consomme,
+     cout_mp.`quantite_dechet` AS cout_mp_quantite_dechet,
+     cout_mp.`quantite_existante` AS cout_mp_quantite_existante,
+     cout_mp.`QUANTITE_RESTE` AS cout_mp_QUANTITE_RESTE,
+     cout_mp.`quantite` AS cout_mp_quantite,
+     cout_mp.`id_mat_pre` AS cout_mp_id_mat_pre,
+     cout_mp.`id_production` AS cout_mp_id_production,
+     matiere_premier.`id` AS matiere_premier_id,
+     matiere_premier.`code` AS matiere_premier_code,
+     matiere_premier.`deleted` AS matiere_premier_deleted,
+     matiere_premier.`nom` AS matiere_premier_nom,
+     matiere_premier.`id_cat` AS matiere_premier_id_cat
+FROM
+     `cout_mp` cout_mp,
+     `matiere_premier` matiere_premier
+WHERE
+     matiere_premier.`id` = cout_mp.`id_mat_pre`
+and cout_mp.`id_production`=$P{idProduction}]]>
+	</queryString>
+	<field name="cout_mp_id" class="java.lang.Integer"/>
+	<field name="cout_mp_COUT_DECHET" class="java.lang.Float"/>
+	<field name="cout_mp_prix_total" class="java.lang.Float"/>
+	<field name="cout_mp_prix_unitaire" class="java.lang.Float"/>
+	<field name="cout_mp_quantite_CHARGE" class="java.lang.Float"/>
+	<field name="cout_mp_quantite_charge_supp" class="java.lang.Float"/>
+	<field name="cout_mp_quantite_consomme" class="java.lang.Float"/>
+	<field name="cout_mp_quantite_dechet" class="java.lang.Float"/>
+	<field name="cout_mp_quantite_existante" class="java.lang.Float"/>
+	<field name="cout_mp_QUANTITE_RESTE" class="java.lang.Float"/>
+	<field name="cout_mp_quantite" class="java.lang.Float"/>
+	<field name="cout_mp_id_mat_pre" class="java.lang.Integer"/>
+	<field name="cout_mp_id_production" class="java.lang.Integer"/>
+	<field name="matiere_premier_id" class="java.lang.Integer"/>
+	<field name="matiere_premier_code" class="java.lang.String"/>
+	<field name="matiere_premier_deleted" class="java.lang.Boolean"/>
+	<field name="matiere_premier_nom" class="java.lang.String"/>
+	<field name="matiere_premier_id_cat" class="java.lang.Integer"/>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="185" height="20" backcolor="#FFFFCC" uuid="52aeb1b8-e362-4acd-ab66-c36c9dc5012e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[  DESIGNATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="185" y="0" width="185" height="20" backcolor="#FFFFCC" uuid="560a3f6b-7cab-43f2-b561-f1c187107c7c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[  QUANTITE FABRIQUEE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="0" width="185" height="20" backcolor="#FFFFCC" uuid="9aa2be53-216b-41d3-9f4d-ba1c6a1fba3b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[  QUANTITE DEHCET]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="185" height="20" uuid="097bae1f-943c-4fe4-bf14-9d4c760bd126"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{matiere_premier_nom}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="370" y="0" width="185" height="20" uuid="9b9c406a-b0a1-47a4-83ba-0a647da18b78"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cout_mp_quantite_dechet}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="185" y="0" width="185" height="20" uuid="fdd19690-16eb-4e6d-8917-faff5b7d01d1"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cout_mp_quantite_consomme}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

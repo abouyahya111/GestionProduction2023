@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BonProduction2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT a.CODE_ARTICLE,a.LIBELLE, m.code, m.nom,c.quantite_consomme Production, c.QUANTITE_DECHET quantite_dechet, s.unite
+FROM cout_mp c,
+      production p,
+      matiere_premier m,
+      categorie_mp cat,
+      sub_categorie_mp s,
+      articles a
+where c.id_production=p.id
+and m.id_cat=cat.id
+and cat.id_sub_cat=s.id
+and c.id_mat_pre=m.id
+AND p.id_article=a.id
+and p. `date-deb_fab_pre` between '2017-04-08' AND '2017-04-08'
+
+group by m.code order by a.CODE_ARTICLE]]>
+	</queryString>
+	<field name="CODE_ARTICLE" class="java.lang.String"/>
+	<field name="LIBELLE" class="java.lang.String"/>
+	<field name="code" class="java.lang.String"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="Production" class="java.lang.Float"/>
+	<field name="quantite_dechet" class="java.lang.Float"/>
+	<field name="unite" class="java.lang.String"/>
+	<group name="code">
+		<groupExpression><![CDATA[$F{code}]]></groupExpression>
+	</group>
+	<group name="CODE_ARTICLE">
+		<groupExpression><![CDATA[$F{CODE_ARTICLE}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="174" y="0" width="72" height="20"/>
+				<textElement/>
+				<text><![CDATA[code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="246" y="0" width="111" height="20"/>
+				<textElement/>
+				<text><![CDATA[nom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="0" width="72" height="20"/>
+				<textElement/>
+				<text><![CDATA[Production]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="0" width="76" height="20"/>
+				<textElement/>
+				<text><![CDATA[quantite_dechet]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="0" width="50" height="20"/>
+				<textElement/>
+				<text><![CDATA[unite]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="174" y="0" width="72" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="246" y="0" width="111" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="357" y="0" width="72" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Production}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="0" width="76" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{quantite_dechet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="505" y="0" width="50" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{unite}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

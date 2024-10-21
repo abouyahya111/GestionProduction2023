@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BonProduction3" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\ENV_DEV\\workspace3\\GestionProduction\\src\\jasper\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DATE_DU" class="java.util.Date"/>
+	<parameter name="DATE_AU" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT
+     production.`id` AS production_id,
+     production.`COUT_DECHET` AS production_COUT_DECHET,
+     production.`cout_total` AS production_cout_total,
+     production.`cout_employe` AS production_cout_employe,
+     production.`COUT_EMPLOYE_EMABALGE` AS production_COUT_EMPLOYE_EMABALGE,
+     production.`COUT_EMPLOYE_GENE` AS production_COUT_EMPLOYE_GENE,
+     production.`cout_mp` AS production_cout_mp,
+     production.`date` AS production_date,
+     production.`date_deb_fab_ree` AS production_date_deb_fab_ree,
+     production.`date_fin_fab_pre` AS production_date_fin_fab_pre,
+     production.`date_fin_fab_ree` AS production_date_fin_fab_ree,
+     production.`NOMBRE_HEURE` AS production_NOMBRE_HEURE,
+     production.`NUM_OF` AS production_NUM_OF,
+     production.`PERIODE` AS production_PERIODE,
+     production.`quantite_estime` AS production_quantite_estime,
+     production.`quantite_reel` AS production_quantite_reel,
+     production.`statut` AS production_statut,
+     production.`id_article` AS production_id_article,
+     production.`ID_EQUIPE` AS production_ID_EQUIPE,
+     production.`ID_EQUIPE_GEN` AS production_ID_EQUIPE_GEN,
+     production.`id_ligne` AS production_id_ligne,
+     production.`ID_MAGASIN_PF` AS production_ID_MAGASIN_PF,
+     production.`id_magasin` AS production_id_magasin,
+     production.`id_magasin_stock` AS production_id_magasin_stock,
+     production.`annuler_par` AS production_annuler_par,
+     production.`creer_par` AS production_creer_par,
+     production.`modifier_par` AS production_modifier_par,
+     articles.`id` AS articles_id,
+     articles.`CENTRECOUT1` AS articles_CENTRECOUT1,
+     articles.`CENTRECOUT2` AS articles_CENTRECOUT2,
+     articles.`CENTRECOUT3` AS articles_CENTRECOUT3,
+     articles.`CENTRECOUT4` AS articles_CENTRECOUT4,
+     articles.`CENTRECOUT5` AS articles_CENTRECOUT5,
+     articles.`CODE_ARTICLE` AS articles_CODE_ARTICLE,
+     articles.`CODE_FONCTION` AS articles_CODE_FONCTION,
+     articles.`CONDITIONNEMENT` AS articles_CONDITIONNEMENT,
+     articles.`DATE_CREATION` AS articles_DATE_CREATION,
+     articles.`LIBELLE` AS articles_LIBELLE,
+     articles.`PRIX_RETOUR` AS articles_PRIX_RETOUR,
+     articles.`PRIX_VENTE` AS articles_PRIX_VENTE,
+     articles.`TVA` AS articles_TVA
+FROM
+     `production` production,
+     `articles` articles
+WHERE
+     production.`date_fin_fab_pre` BETWEEN $P{DATE_DU} AND $P{DATE_AU}
+ AND articles.`id` = production.`id_article`
+ and production.`statut`='Terminé']]>
+	</queryString>
+	<field name="production_id" class="java.lang.Integer"/>
+	<field name="production_COUT_DECHET" class="java.lang.Float"/>
+	<field name="production_cout_total" class="java.lang.Float"/>
+	<field name="production_cout_employe" class="java.lang.Float"/>
+	<field name="production_COUT_EMPLOYE_EMABALGE" class="java.lang.Float"/>
+	<field name="production_COUT_EMPLOYE_GENE" class="java.lang.Float"/>
+	<field name="production_cout_mp" class="java.lang.Float"/>
+	<field name="production_date" class="java.sql.Timestamp"/>
+	<field name="production_date_deb_fab_ree" class="java.sql.Date"/>
+	<field name="production_date_fin_fab_pre" class="java.sql.Date"/>
+	<field name="production_date_fin_fab_ree" class="java.sql.Date"/>
+	<field name="production_NOMBRE_HEURE" class="java.lang.Float"/>
+	<field name="production_NUM_OF" class="java.lang.String"/>
+	<field name="production_PERIODE" class="java.lang.String"/>
+	<field name="production_quantite_estime" class="java.lang.Float"/>
+	<field name="production_quantite_reel" class="java.lang.Float"/>
+	<field name="production_statut" class="java.lang.String"/>
+	<field name="production_id_article" class="java.lang.Integer"/>
+	<field name="production_ID_EQUIPE" class="java.lang.Integer"/>
+	<field name="production_ID_EQUIPE_GEN" class="java.lang.Integer"/>
+	<field name="production_id_ligne" class="java.lang.Integer"/>
+	<field name="production_ID_MAGASIN_PF" class="java.lang.Integer"/>
+	<field name="production_id_magasin" class="java.lang.Integer"/>
+	<field name="production_id_magasin_stock" class="java.lang.Integer"/>
+	<field name="production_annuler_par" class="java.lang.Integer"/>
+	<field name="production_creer_par" class="java.lang.Integer"/>
+	<field name="production_modifier_par" class="java.lang.Integer"/>
+	<field name="articles_id" class="java.lang.Integer"/>
+	<field name="articles_CENTRECOUT1" class="java.lang.Float"/>
+	<field name="articles_CENTRECOUT2" class="java.lang.String"/>
+	<field name="articles_CENTRECOUT3" class="java.lang.Float"/>
+	<field name="articles_CENTRECOUT4" class="java.lang.Float"/>
+	<field name="articles_CENTRECOUT5" class="java.lang.Float"/>
+	<field name="articles_CODE_ARTICLE" class="java.lang.String"/>
+	<field name="articles_CODE_FONCTION" class="java.lang.String"/>
+	<field name="articles_CONDITIONNEMENT" class="java.lang.Integer"/>
+	<field name="articles_DATE_CREATION" class="java.sql.Timestamp"/>
+	<field name="articles_LIBELLE" class="java.lang.String"/>
+	<field name="articles_PRIX_RETOUR" class="java.lang.Float"/>
+	<field name="articles_PRIX_VENTE" class="java.lang.Float"/>
+	<field name="articles_TVA" class="java.lang.Float"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[BON PRODUCTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="30" width="100" height="17"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[PERIODE DU ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="30" width="36" height="17"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[AU ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="239" y="30" width="111" height="17"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATE_DU}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="386" y="30" width="112" height="17"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATE_AU}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="54" y="0" width="153" height="20"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ARTICLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="42" height="20"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[CODE ARTICLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="0" width="160" height="20"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[QUANTITE FABRIQUEE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="96" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="20" width="555" height="66"/>
+				<subreportParameter name="idProduction">
+					<subreportParameterExpression><![CDATA[$F{production_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "FactureService_subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement mode="Opaque" x="54" y="0" width="153" height="20" backcolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{articles_LIBELLE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="42" height="20" backcolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{articles_CODE_ARTICLE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="240" y="0" width="160" height="20" backcolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{production_quantite_reel}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="401" y="0" width="49" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="450" y="0" width="5" height="20"/>
+				<textElement/>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="240" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
